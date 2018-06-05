@@ -5,10 +5,7 @@ application = Flask(__name__)
 
 @application.route('/')
 def home():
-    if not session.get('logged_in'):
-        return render_template('login.html')
-    else:
-        return "Hello Boss!"
+    return "Hello World!"
 
 @application.route("/hey/<string:name>")
 def hey(name):
