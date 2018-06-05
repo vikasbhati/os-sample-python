@@ -6,7 +6,7 @@ def hello():
     return "Hello World!"
 
 @application.route("/hey")
-def hey(name):
+def hey():
     return render_template(
         'test.html')
 
