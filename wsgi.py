@@ -1,11 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,session
 
 
 application = Flask(__name__)
 
 @application.route('/')
 def hello():
-    return "Hello World!"
+    if not session.get('logged_in'):
+        return render_template('login.html')
+    else:
+        return "Hello Boss!"
 
 @application.route("/hey/<string:name>")
 def hey(name):
