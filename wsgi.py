@@ -1,5 +1,5 @@
 from flask import Flask, flash, redirect, render_template, request, session, abort
-import os
+
 
 application = Flask(__name__)
 
@@ -21,5 +21,4 @@ def do_admin_login():
     return home()
 
 if __name__ == "__main__":
-    application.secret_key = os.urandom(12)
     application.run()
