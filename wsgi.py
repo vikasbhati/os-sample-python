@@ -1,4 +1,4 @@
-from flask import Flask, render_template,session
+from flask import Flask, render_template, session, request, 
 
 
 application = Flask(__name__)
@@ -14,6 +14,14 @@ def hello():
 def hey(name):
     return render_template(
         'test.html',name=name)
+
+@application.route('/login', methods=['POST'])
+def do_admin_login():
+    if request.form['password'] == 'password' and request.form['username'] == 'admin':
+        session['logged_in'] = True
+    else:
+        flash('wrong password!')
+    return home()
 
 if __name__ == "__main__":
     application.run()
