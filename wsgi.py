@@ -5,7 +5,7 @@ application = Flask(__name__)
 
 @application.route('/')
 def hello():
-    if session.get('logged_in'):
+    if not session.get('logged_in'):
         return render_template('login.html')
     else:
         return "Hello Boss!"
