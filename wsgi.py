@@ -21,7 +21,7 @@ def do_admin_login():
         session['logged_in'] = True
     else:
         flash('wrong password!')
-    return home()
+    return hello()
 
 if __name__ == "__main__":
     application.run()
