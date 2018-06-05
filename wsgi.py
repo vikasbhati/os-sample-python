@@ -15,7 +15,7 @@ def hey(name):
     return render_template(
         'test.html',name=name)
 
-@application.route('/login', method=['POST'])
+@application.route('/login', methods=['POST'])
 def do_admin_login():
     if not session.get('logged_in'):
         session['logged_in'] = True
