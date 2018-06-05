@@ -5,10 +5,10 @@ application = Flask(__name__)
 def hello():
     return "Hello World!"
 
-@application.route("/hey/<string:name>")
+@application.route("/hey")
 def hey(name):
     return render_template(
-        'test.html',name=name)
+        'test.html')
 
 if __name__ == "__main__":
     application.run()
