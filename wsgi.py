@@ -4,7 +4,7 @@ from flask import Flask, render_template
 application = Flask(__name__)
 
 @application.route('/')
-def home():
+def hello():
     return "Hello World!"
 
 @application.route("/hey/<string:name>")
