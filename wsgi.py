@@ -40,4 +40,5 @@ def do_admin_login():
 
 if __name__ == "__main__":
     application.secret_key = os.urandom(12)
+    application.config['SESSION_TYPE'] = 'filesystem'
     application.run()
