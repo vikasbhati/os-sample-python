@@ -5,6 +5,7 @@ from random import randint
 
 import os
 
+
 application = Flask(__name__)
 
 @application.route('/')
@@ -12,7 +13,7 @@ def hello():
     if not session.get('logged_in'):
         return render_template('login.html')
     else:
-        return "Hello Boss!"
+        return hey("vikas")
 
 @application.route("/hey/<string:name>")
 def hey(name):
