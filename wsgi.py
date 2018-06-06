@@ -13,6 +13,7 @@ def hello():
 @application.route("/hey/<string:name>")
 def hey(name):
     
+    quote="The limits of my language are the limits of my mind. All I know is what I have words for."
     return render_template(
         'test.html', name=name)
 
