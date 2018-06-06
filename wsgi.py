@@ -39,5 +39,5 @@ def do_admin_login():
     return hello()
 
 if __name__ == "__main__":
-    application.secret_key = os.urandom(12)
+    application.config['SECRET_KEY'] = 'redsfsfsfsfis'
     application.run()
