@@ -19,6 +19,7 @@ def hey(name):
 def do_admin_login():
     if not session.get('logged_in'):
         session['logged_in'] = True
+        flash('Hello')
     else:
         flash('wrong password!')
     return hello()
