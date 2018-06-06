@@ -12,7 +12,9 @@ def hello():
 
 @application.route("/hey/<string:name>")
 def hey(name):
-    
+    quotes=["The limits of my language are the limits of my mind. All I know is what I have words for.",
+           "The limits of my language are the limits of my mind. All I know is what I have words for."]
+    randno=randint(0,len(quotes)-1)
     quote="The limits of my language are the limits of my mind. All I know is what I have words for."
     return render_template(
         'test.html', **locals())
