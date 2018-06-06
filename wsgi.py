@@ -1,5 +1,5 @@
 from flask import Flask, render_template, session, request, redirect, abort, flash
-
+from random import randint
 
 application = Flask(__name__)
 
@@ -15,6 +15,7 @@ def hey(name):
     quotes=["The limits of my language are the limits of my mind. All I know is what I have words for.",
            "The limits of my language are the limits of my mind. All I know is what I have words for."]
     
+    randomNumber = randint(0,len(quotes)-1) 
     quote="The limits of my language are the limits of my mind. All I know is what I have words for."
     return render_template(
         'test.html', **locals())
