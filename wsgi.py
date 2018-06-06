@@ -1,5 +1,10 @@
-from flask import Flask, render_template, session, request, redirect, abort, flash
+from flask import Flask
+from flask import Flask, flash, redirect, render_template, request, session, abort
+
 from random import randint
+
+import os
+
 
 application = Flask(__name__)
 
