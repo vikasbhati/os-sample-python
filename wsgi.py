@@ -15,7 +15,7 @@ def hey(name):
     
     quote="The limits of my language are the limits of my mind. All I know is what I have words for."
     return render_template(
-        'test.html', name=name)
+        'test.html', **locals())
 
 @application.route('/login', methods=['POST'])
 def do_admin_login():
