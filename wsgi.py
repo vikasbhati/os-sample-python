@@ -22,7 +22,7 @@ def hey(name):
     quote = quotes[randomNumber]
     
     return render_template(
-        'test.html', **locals() )
+        'test.html', **locals())
 
 @application.route('/login', methods=['POST'])
 def do_admin_login():
