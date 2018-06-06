@@ -13,10 +13,15 @@ def hello():
 @application.route("/hey/<string:name>")
 def hey(name):
     quotes=["The limits of my language are the limits of my mind. All I know is what I have words for.",
-           "The limits of my language are the limits of my mind. All I know is what I have words for."]
+           "'If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is.' -- John Louis von Neumann ",
+           "'Computer science is no more about computers than astronomy is about telescopes' --  Edsger Dijkstra ",
+           "'To understand recursion you must first understand recursion..' -- Unknown",
+           "'You look at things that are and ask, why? I dream of things that never were and ask, why not?' -- Unknown",
+           "'Mathematics is the key and door to the sciences.' -- Galileo Galilei",
+           "'Not everyone will understand your journey. Thats fine. Its not their journey to make sense of. Its yours.' -- Unknown"]
     
     randomNumber = randint(0,len(quotes)-1) 
-    quote="The limits of my language are the limits of my mind. All I know is what I have words for."
+    quote=quotes[randomNumber]
     return render_template(
         'test.html', **locals())
 
