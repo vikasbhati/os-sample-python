@@ -1,11 +1,12 @@
 from flask import Flask
 from flask import Flask, flash, redirect, render_template, request, session, abort
+from flask.ext.session import Session
 
 from random import randint
 
 import os
 
-
+sess = Session()
 application = Flask(__name__)
 
 @application.route('/')
@@ -41,4 +42,6 @@ def do_admin_login():
 if __name__ == "__main__":
     application.secret_key = os.urandom(12)
     application.config['SESSION_TYPE'] = 'filesystem'
+    sess.init_app(application)
+    application.debug = True
     application.run()
