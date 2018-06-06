@@ -7,6 +7,8 @@ import os
 
 
 application = Flask(__name__)
+application.secret_key = os.urandom(12)
+
 
 @application.route('/')
 def hello():
@@ -38,6 +40,11 @@ def do_admin_login():
         flash('wrong password!')
     return hello()
 
+@application.route("/logout")
+def logout():
+    session['logged_in'] = False
+    return hello()
+
 if __name__ == "__main__":
-    application.secret_key = os.urandom(12)
+    
     application.run()
