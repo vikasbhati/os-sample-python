@@ -15,11 +15,10 @@ def hey(name):
     return render_template(
         'test.html',name=name)
 
-@application.route('/login')
+@application.route('/login', methods=['POST'])
 def do_admin_login():
-    if not session.get('logged_in'):
+    if request.form['password'] == 'password' and request.form['username'] == 'admin':
         session['logged_in'] = True
-        flash('Hello')
     else:
         flash('wrong password!')
     return hello()
