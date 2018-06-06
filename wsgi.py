@@ -15,7 +15,7 @@ def hello():
     if not session.get('logged_in'):
         return render_template('login.html')
     else:
-        return hey("vikas")
+        return hey("")
 
 @application.route("/hey/<string:name>")
 def hey(name):
